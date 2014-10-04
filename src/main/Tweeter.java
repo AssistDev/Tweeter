@@ -59,8 +59,12 @@ public class Tweeter {
 
 		String title = resultPage.getUrl().toExternalForm();
 
-		loggedIn = true;
-		return title.equals("https://mobile.twitter.com/");
+		if(title.equals("https://mobile.twitter.com/")) {
+			loggedIn = true;
+			return true;
+		}
+		
+		return false;
 	}
 
 	public boolean tweet(String text) throws Exception {
