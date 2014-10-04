@@ -78,6 +78,8 @@ public class Tweeter {
 		final HtmlSubmitInput button = form.getInputByValue("Tweet");
 		final HtmlPage resultPage = button.click();
 
+		webClient.closeAllWindows();
+		
 		String title = resultPage.getUrl().toExternalForm();
 		return title.equals("https://mobile.twitter.com/");
 	}
